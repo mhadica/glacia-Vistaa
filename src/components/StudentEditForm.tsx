@@ -71,12 +71,19 @@ const StudentEditForm = () => {
   // Function to send data to Google Sheets
   const sendToGoogleSheet = async (data: StudentData) => {
     try {
+      const response = await fetch("YOUR_WEB_APP_URL", {
+      method: "POST",
+      mode: "no-cors", // required if access is public and no response is needed
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    });
       // In a real implementation, we would use the Google Sheets API
       // For now, we'll log the data that would be sent to Google Sheets
       console.log("Data to be sent to Google Sheets:", data);
 
-      // Simulate API call
-      await new Promise((resolve) => setTimeout(resolve, 1000));
+      
 
       return true;
     } catch (error) {
