@@ -71,7 +71,7 @@ const StudentEditForm = () => {
   // Function to send data to Google Sheets
   const sendToGoogleSheet = async (data: StudentData) => {
     try {
-      const response = await fetch("YOUR_WEB_APP_URL", {
+      const response = await fetch("https://script.google.com/macros/s/AKfycbylPlk4ZM4aI90zG23hMppQckiDNaqpOMBNl1N17wbE0GJaGUBE_qDwVLf5-7tnkImf/exec", {
       method: "POST",
       mode: "no-cors", // required if access is public and no response is needed
       headers: {
